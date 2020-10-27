@@ -56,8 +56,7 @@ def submitCallBack():
 
 B1 = Button(bottomframe1, text ="Check!", command = submitCallBack, bg = "#d1d6d6", font=("Cambria", 12), padx= 10, relief= RAISED )
 B1.pack()
-names = Label(bottomframe, text = "A project by - Arpit, Mukul, Nagarjun, Himanchal", fg = "grey", font=("Comic Sans MS", 8), bg = "#007777")
-names.pack(side= BOTTOM)
+
 root.configure(bg="#007777")
 w = 800 # width for the Tk root
 h = 350 # height for the Tk root
