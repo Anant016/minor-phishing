@@ -4,9 +4,9 @@ from tkinter import *
 from web_trainer import Webtrainer as WT
 import pandas
 from web_main import Webmain as WM
-#from PIL import Image, ImageTk
+from PIL import Image, ImageTk
 import datetime
-# from tr import tr
+import tr
 
 root = Tk()
 # root=tk.Tk()
@@ -46,7 +46,6 @@ def submitCallBack():
 	processing_reference=WM()
 	processing_reference.TestUrl(url,'test_features.csv')
 	# ans = tr.gui_caller('url_features.csv','test_features.csv')
-	
 	# a=str(ans).split()
 	# if int(a[1])==0:
 	# 	tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Good")
