@@ -1,11 +1,10 @@
 import re
 import urllib
-# import urllib2
 import urllib.request as urllib2
 from xml.dom import minidom
 import csv
 import pygeoip
-import urlparse
+from urllib.parse import urlparse
 
 
 class Apidata:
@@ -88,7 +87,7 @@ class Weburlfeature():
     def Checkipexistence(self, url_token):
         count = 0
         for child in url_token:
-            if unicode(child).isnumeric():
+            if child.isnumeric():
                 count = count+1
             else:
                 if count >= 4:

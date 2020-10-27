@@ -6,7 +6,7 @@ class Fileoutput:
     def __init__(self):
         self.terminator = 0
     def outputWriter(self,list_url_feature,output_file):
-        self.file_writer = open(output_file,'wb')
+        self.file_writer = open(output_file,'w')
         self.terminator = 0
         for self.child in list_url_feature:
             #print child.keys()

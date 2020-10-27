@@ -1,25 +1,19 @@
-# from Tkinter import *
-import tkinter as tk
+from tkinter import *
+# import tkinter as tk
 # import tkMessageBox
 from web_trainer import Webtrainer as WT
 import pandas
 from web_main import Webmain as WM
 #from PIL import Image, ImageTk
 import datetime
+# from tr import tr
 
-# root = Tk()
-root=tk.Tk()
+root = Tk()
+# root=tk.Tk()
 lab = Label(root, bg= "#007777", fg= "silver")
 lab.pack()
 
-def clock():
-    time = datetime.datetime.now().strftime("Time: %H:%M:%S")
-    lab.config(text=time)
-    #lab['text'] = time
-    root.after(1000, clock) # run itself again after 1000 ms
 
-# run first time
-clock()
 #
 #im = Image.open('apple_ex.png')
 #tkimage = ImageTk.PhotoImage(im)
@@ -51,16 +45,16 @@ def submitCallBack():
 	print(url)
 	processing_reference=WM()
 	processing_reference.TestUrl(url,'test_features.csv')
-	#ans = tr.gui_caller('url_features.csv','test_features.csv')
-	'''
-	a=str(ans).split()
-	if int(a[1])==0:
-		tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Good")
-	elif int(a[1])==1:
-		tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Malicious")
-	else:
-		tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Malware")
-	'''
+	# ans = tr.gui_caller('url_features.csv','test_features.csv')
+	
+	# a=str(ans).split()
+	# if int(a[1])==0:
+	# 	tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Good")
+	# elif int(a[1])==1:
+	# 	tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Malicious")
+	# else:
+	# 	tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Malware")
+
 B1 = Button(bottomframe1, text ="Check!", command = submitCallBack, bg = "#d1d6d6", font=("Cambria", 12), padx= 10, relief= RAISED )
 B1.pack()
 names = Label(bottomframe, text = "A project by - Arpit, Mukul, Nagarjun, Himanchal", fg = "grey", font=("Comic Sans MS", 8), bg = "#007777")
