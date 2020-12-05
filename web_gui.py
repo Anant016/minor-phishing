@@ -1,12 +1,12 @@
 from tkinter import *
 # import tkinter as tk
 # import tkMessageBox
-from web_trainer import Webtrainer as WT
+# from web_trainer import Webtrainer as WT
 import pandas
 from web_main import Webmain as WM
 from PIL import Image, ImageTk
 import datetime
-import tr
+# import tr
 
 root = Tk()
 # root=tk.Tk()
@@ -35,13 +35,28 @@ label = Label(frame, textvariable=var, pady= 30, relief=FLAT, fg="silver", font=
 var.set("PHISHING WEBSITE DETECTOR")
 label.pack()
 
+ans = StringVar()
+label = Label(frame, textvariable=ans, pady= 30, relief=FLAT, fg="silver", font=("Cambria", 26) , bg = "#007777")
 
-L1 = Label(frame, text="Enter the URL: ", bg = "#007777", fg = "grey", pady = "40")
+
+L1 = Label(frame, text="Enter the URL: ", bg = "#007777", fg = "black", pady = "40")
 L1.pack( side = LEFT)
 E1 = Entry(frame, bd =1, width=100)
 E1.pack(side = RIGHT)
+
+
+
+
 def submitCallBack():
 	url=E1.get()
+	if('https' in url):
+		ans.set("Safe")
+	elif('' == url):
+		ans.set("")
+	elif('http' == url):
+		ans.set("")
+		
+	
 	print(url)
 	processing_reference=WM()
 	processing_reference.TestUrl(url,'test_features.csv')
@@ -54,8 +69,11 @@ def submitCallBack():
 	# else:
 	# 	tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Malware")
 
+
+
 B1 = Button(bottomframe1, text ="Check!", command = submitCallBack, bg = "#d1d6d6", font=("Cambria", 12), padx= 10, relief= RAISED )
 B1.pack()
+
 
 root.configure(bg="#007777")
 w = 800 # width for the Tk root
@@ -73,7 +91,7 @@ y = (hs/2) - (h/2)
 # and where it is placed
 root.geometry('%dx%d+%d+%d' % (w, h, x, y))
 #root.geometry('{}x{}'.format(800, 400))
-root.wm_title("P W D - BTP Project")
+root.wm_title("Minor Project")
 #root.wm_overrideredirect(True)
 #root.iconbitmap(r'.\detective-multi-size.ico')
 root.mainloop()
