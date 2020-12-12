@@ -48,12 +48,12 @@ E1.pack(side = RIGHT)
 
 
 def submitCallBack():
-
 	print(url)
 	processing_reference=WM()
 	processing_reference.TestUrl(url,'test_features.csv')
 	ans = tr.gui_caller('url_features.csv','test_features.csv')
-	a=str(ans).split()
+	value = model.evaluate(ans, "./XGBoostClassifier.pickle.dat")
+	a=str(value).split()
 	if int(a[1])==0:
 		tkMessageBox.showinfo( "Result","Safe")
 	elif int(a[1])==1:
