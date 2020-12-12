@@ -48,26 +48,18 @@ E1.pack(side = RIGHT)
 
 
 def submitCallBack():
-	url=E1.get()
-	if('https' in url):
-		ans.set("Safe")
-	elif('' == url):
-		ans.set("")
-	elif('http' == url):
-		ans.set("")
-		
-	
+
 	print(url)
 	processing_reference=WM()
 	processing_reference.TestUrl(url,'test_features.csv')
-	# ans = tr.gui_caller('url_features.csv','test_features.csv')
-	# a=str(ans).split()
-	# if int(a[1])==0:
-	# 	tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Good")
-	# elif int(a[1])==1:
-	# 	tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Malicious")
-	# else:
-	# 	tkMessageBox.showinfo( "PWD Result","The URL ->"+url+" is Malware")
+	ans = tr.gui_caller('url_features.csv','test_features.csv')
+	a=str(ans).split()
+	if int(a[1])==0:
+		tkMessageBox.showinfo( "Result","Safe")
+	elif int(a[1])==1:
+		tkMessageBox.showinfo( "Result","Not Safe")
+	else:
+		tkMessageBox.showinfo( "Result","Not Safe")
 
 
 
